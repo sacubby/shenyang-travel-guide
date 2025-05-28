@@ -33,7 +33,7 @@
 
 ## 🚀 在线访问
 
-访问地址：[https://your-username.github.io/shenyang-travel-guide](https://your-username.github.io/shenyang-travel-guide)
+访问地址：[https://sacubby.github.io/shenyang-travel-guide](https://sacubby.github.io/shenyang-travel-guide)
 
 ## 📱 技术特点
 
@@ -64,7 +64,7 @@
 
 1. 克隆项目到本地
 ```bash
-git clone https://github.com/your-username/shenyang-travel-guide.git
+git clone https://github.com/sacubby/shenyang-travel-guide.git
 ```
 
 2. 直接在浏览器中打开 `index.html` 文件即可
