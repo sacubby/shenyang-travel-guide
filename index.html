@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沈阳三日游攻略-大游资阜新浩陪同 | 盛京古韵·美食之旅</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #c8102e;
+            --emerald: #2ecc71;
+            --dark-ink: #2c3e50;
+            --light-ink: #34495e;
+            --paper: #faf8f3;
+            --bamboo: #7cb342;
+            --shadow: rgba(44, 62, 80, 0.1);
+            --nav-primary: #27ae60;
+            --nav-secondary: #16a085;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: var(--paper);
+            color: var(--dark-ink);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* 水墨画背景效果 */
+        .ink-wash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(200, 16, 46, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(46, 204, 113, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(124, 179, 66, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* 传统中式容器 */
+        .scroll-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--paper);
+            box-shadow: 0 0 50px var(--shadow);
+            position: relative;
+        }
+
+        /* 顶部印章式标题 */
+        .seal-header {
+            background: linear-gradient(135deg, var(--primary-red), #a91b2e);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .seal-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>') repeat;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .seal-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 3.5rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .seal-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 英雄区域 - 使用在线图片 */
+        .hero-section {
+            height: 70vh;
+            background: 
+                linear-gradient(
+                    to bottom,
+                    rgba(44, 62, 80, 0.7) 0%,
+                    rgba(44, 62, 80, 0.3) 50%,
+                    rgba(250, 248, 243, 0.9) 100%
+                ),
+                url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* 传统卷轴式导航 */
+        .scroll-nav {
+            background: linear-gradient(to right, var(--nav-primary), var(--nav-secondary), var(--nav-primary));
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .nav-item {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 25px 20px;
+            color: white;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .nav-item:last-child {
+            border-right: none;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.1);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .nav-item:hover::before,
+        .nav-item.active::before {
+            transform: scaleX(1);
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--dark-ink);
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+
+        /* 内容区域 */
+        .content-section {
+            display: none;
+            padding: 60px 40px;
+            min-height: 70vh;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* 传统中式卡片 */
+        .traditional-card {
+            background: white;
+            border: 2px solid #d4af37;
+            border-radius: 0;
+            margin: 30px 0;
+            padding: 30px;
+            position: relative;
+            box-shadow: 8px 8px 0 rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .traditional-card::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid #d4af37;
+            pointer-events: none;
+        }
+
+        .traditional-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 rgba(212, 175, 55, 0.3);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .seal-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-item {
+                padding: 15px 10px;
+                font-size: 1rem;
+            }
+            
+            .content-section {
+                padding: 30px 20px;
+            }
+        }
+
+        /* 其他样式继续... */
+        .attraction-item {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #d4af37;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .attraction-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .item-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .price-seal {
+            background: #e8f5e8;
+            color: #2d5a2d;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-red);
+            padding-bottom: 10px;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .modal-close:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="ink-wash"></div>
+    
+    <div class="scroll-container">
+        <!-- 印章式标题 -->
+        <header class="seal-header">
+            <h1 class="seal-title">沈阳三日游攻略-大游资阜新浩陪同</h1>
+            <p class="seal-subtitle">盛京古韵 · 美食之旅 | 2025年5月30日-6月1日</p>
+        </header>
+
+        <!-- 英雄区域 -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-title">探索盛京古都</h2>
+                <p class="hero-description">
+                    踏访清朝发源地，品味地道东北美食<br>
+                    感受满族文化的深厚底蕴，体验现代沈阳的活力
+                </p>
+                <div style="background: rgba(255,255,255,0.2); padding: 15px 25px; border-radius: 25px; backdrop-filter: blur(10px); display: inline-block;">
+                    <strong>天气预报：</strong> 5月30日 晴 32°/19° | 5月31日 多云 31°/18° | 6月1日 晴好
+                </div>
+            </div>
+        </section>
+
+        <!-- 卷轴式导航 -->
+        <nav class="scroll-nav">
+            <div class="nav-container">
+                <button class="nav-item active" onclick="showSection('overview', this)">行程概览</button>
+                <button class="nav-item" onclick="showSection('day1', this)">第一天</button>
+                <button class="nav-item" onclick="showSection('day2', this)">第二天</button>
+                <button class="nav-item" onclick="showSection('day3', this)">第三天</button>
+                <button class="nav-item" onclick="showSection('cost', this)">费用总计</button>
+            </div>
+        </nav>
+
+        <!-- 内容区域 -->
+        <main>
+            <!-- 行程概览 -->
+            <section id="overview" class="content-section active">
+                <div class="traditional-card">
+                    <h2 style="text-align: center; font-family: 'Ma Shan Zheng', cursive; font-size: 2.5rem; color: var(--primary-red); margin-bottom: 30px;">行程概览</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                        <div style="background: linear-gradient(135deg, var(--primary-red), #a91b2e); color: white; padding: 30px; text-align: center; position: relative;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px;">🏛️ 历史文化</h3>
+                            <p>沈阳故宫、张氏帅府等清朝皇宫遗址，感受盛京古都的历史底蕴与满族文化</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, var(--emerald), #27ae60); color: white; padding: 30px; text-align: center;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px;">🍜 地道美食</h3>
+                            <p>沈阳鸡架、不老林糖、克拉古斯香肠等正宗沈阳特色美食，体验东北风味</p>
+                        </div>
+                        <div style="background: linear-gradient(135deg, var(--bamboo), #689f38); color: white; padding: 30px; text-align: center;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 15px;">🚄 交通便利</h3>
+                            <p>高铁直达，市内地铁出行，景点集中，适合轻松游览</p>
+                        </div>
+                    </div>
+
+                    <!-- 行程亮点 -->
+                    <div style="background: white; padding: 30px; border-radius: 20px; margin-top: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                        <h3 style="color: #d4af37; margin-bottom: 20px; text-align: center;">🎯 行程亮点</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                            <div style="text-align: center; padding: 20px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">🏰</div>
+                                <h4>世界文化遗产</h4>
+                                <p style="color: #666; font-size: 0.9rem;">沈阳故宫，中国现存最完整的两大古代宫殿建筑群之一</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">🍗</div>
+                                <h4>沈阳鸡架</h4>
+                                <p style="color: #666; font-size: 0.9rem;">沈阳人的深夜食堂，独特的烹饪方式和调料</p>
+                            </div>
+                            <div style="text-align: center; padding: 20px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">🏛️</div>
+                                <h4>张氏帅府</h4>
+                                <p style="color: #666; font-size: 0.9rem;">东北军阀张作霖及张学良的官邸，近代史的见证</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 第一天 -->
+            <section id="day1" class="content-section">
+                <h2 style="text-align: center; font-family: 'Ma Shan Zheng', cursive; font-size: 2.5rem; color: var(--primary-red); margin-bottom: 30px;">第一天 - 抵达沈阳，古都初印象</h2>
+                <p style="text-align: center; color: var(--light-ink); margin-bottom: 40px; font-size: 1.2rem;">5月30日 周五</p>
+                
+                <div class="traditional-card">
+                    <h3>08:00 - 12:30 北京出发 → 沈阳</h3>
+                    <p><strong>G921次列车</strong> | 北京朝阳站 08:00 → 沈阳站 12:30</p>
+                    <p><strong>票价：</strong>二等座 ¥198/人 × 2人 = ¥396</p>
+                </div>
+
+                <div class="attraction-item" onclick="showModal('hotel')">
+                    <div class="item-header">
+                        <span class="item-name">沈阳新世界酒店</span>
+                        <span class="price-seal">¥380/晚</span>
+                    </div>
+                    <p>位置优越，距离中街步行街仅500米，交通便利</p>
+                </div>
+
+                <div class="attraction-item" onclick="showModal('palace')">
+                    <div class="item-header">
+                        <span class="item-name">沈阳故宫博物院</span>
+                        <span class="price-seal">¥60/人</span>
+                    </div>
+                    <p>世界文化遗产，清朝入关前的皇宫</p>
+                    <div style="background: #f8d7da; padding: 10px; margin-top: 10px; border-left: 4px solid var(--primary-red);">
+                        ⚠️ 需要提前预约！官网或微信公众号预约
+                    </div>
+                </div>
+
+                <div class="attraction-item" onclick="showModal('chicken')">
+                    <div class="item-header">
+                        <span class="item-name">沈阳鸡架</span>
+                        <span class="price-seal">¥40/人</span>
+                    </div>
+                    <p>沈阳最具特色的夜宵，必吃美食</p>
+                </div>
+            </section>
+
+            <!-- 第二天 -->
+            <section id="day2" class="content-section">
+                <h2 style="text-align: center; font-family: 'Ma Shan Zheng', cursive; font-size: 2.5rem; color: var(--primary-red); margin-bottom: 30px;">第二天 - 深度文化游</h2>
+                <p style="text-align: center; color: var(--light-ink); margin-bottom: 40px; font-size: 1.2rem;">5月31日 周六</p>
+                
+                <div class="attraction-item" onclick="showModal('zhangfu')">
+                    <div class="item-header">
+                        <span class="item-name">张学良旧居陈列馆</span>
+                        <span class="price-seal">¥50/人</span>
+                    </div>
+                    <p>东北军阀张作霖及张学良的官邸</p>
+                </div>
+
+                <div class="attraction-item" onclick="showModal('beiling')">
+                    <div class="item-header">
+                        <span class="item-name">沈阳北陵公园（昭陵）</span>
+                        <span class="price-seal">¥50/人</span>
+                    </div>
+                    <p>清太宗皇太极陵墓，古松参天</p>
+                </div>
+
+                <div class="attraction-item" onclick="showModal('bath')">
+                    <div class="item-header">
+                        <span class="item-name">东北洗浴文化体验</span>
+                        <span class="price-seal">¥100/人</span>
+                    </div>
+                    <p>体验东北特色洗浴文化</p>
+                </div>
+            </section>
+
+            <!-- 第三天 -->
+            <section id="day3" class="content-section">
+                <h2 style="text-align: center; font-family: 'Ma Shan Zheng', cursive; font-size: 2.5rem; color: var(--primary-red); margin-bottom: 30px;">第三天 - 轻松购物，返程北京</h2>
+                <p style="text-align: center; color: var(--light-ink); margin-bottom: 40px; font-size: 1.2rem;">6月1日 周日</p>
+                
+                <div class="traditional-card">
+                    <h3>10:00 - 12:00 最后的美食巡礼</h3>
+                    <p><strong>沈阳回头：</strong>沈阳特色小吃，类似煎饺 - ¥30/人</p>
+                </div>
+
+                <div class="traditional-card">
+                    <h3>12:00 - 14:00 特产采购</h3>
+                    <p><strong>推荐特产：</strong>不老林糖、克拉古斯香肠、人参制品、东北大米</p>
+                    <p><strong>预算：</strong>¥200/人</p>
+                </div>
+
+                <div class="traditional-card">
+                    <h3>15:30 - 20:00 返程北京</h3>
+                    <p><strong>G906次列车</strong> | 沈阳站 15:30 → 北京朝阳站 20:00</p>
+                    <p><strong>票价：</strong>二等座 ¥198/人 × 2人 = ¥396</p>
+                </div>
+            </section>
+
+            <!-- 费用总计 -->
+            <section id="cost" class="content-section">
+                <div class="traditional-card">
+                    <h2 style="text-align: center; font-size: 2.5rem; color: #333; margin-bottom: 30px;">💰 费用总计（两人）</h2>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                        <div style="background: linear-gradient(135deg, #3498db, #2980b9); color: white; padding: 20px; text-align: center; border-radius: 10px;">
+                            <h3>🚄 交通费用</h3>
+                            <div style="font-size: 2rem; font-weight: bold; margin: 10px 0;">¥812</div>
+                            <p>往返高铁票 ¥792</p>
+                            <p>市内交通 ¥20</p>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; padding: 20px; text-align: center; border-radius: 10px;">
+                            <h3>🏨 住宿费用</h3>
+                            <div style="font-size: 2rem; font-weight: bold; margin: 10px 0;">¥760</div>
+                            <p>沈阳新世界酒店</p>
+                            <p>2晚 × ¥380/晚</p>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white; padding: 20px; text-align: center; border-radius: 10px;">
+                            <h3>🍜 餐饮费用</h3>
+                            <div style="font-size: 2rem; font-weight: bold; margin: 10px 0;">¥620</div>
+                            <p>正餐 ¥420</p>
+                            <p>特色小吃 ¥200</p>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 20px; text-align: center; border-radius: 10px;">
+                            <h3>🎫 门票费用</h3>
+                            <div style="font-size: 2rem; font-weight: bold; margin: 10px 0;">¥320</div>
+                            <p>故宫 ¥120 + 帅府 ¥100</p>
+                            <p>北陵公园 ¥100</p>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #1abc9c, #16a085); color: white; padding: 20px; text-align: center; border-radius: 10px; grid-column: span 2;">
+                            <h3>💎 总计预算</h3>
+                            <div style="font-size: 2rem; font-weight: bold; margin: 10px 0;">¥3112</div>
+                            <p>两人三天两夜 | 人均 ¥1556</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 模态框 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId, clickedElement) {
+            // 隐藏所有内容区域
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // 移除所有导航项的活动状态
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 显示选中的内容区域
+            document.getElementById(sectionId).classList.add('active');
+            
+            // 添加活动状态到点击的导航项
+            if (clickedElement) {
+                clickedElement.classList.add('active');
+            }
+        }
+
+        function showModal(type) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const modalData = {
+                hotel: {
+                    title: '沈阳新世界酒店',
+                    content: `
+                        <p><strong>地址：</strong>和平区太原南街2号</p>
+                        <p><strong>特色：</strong>位置优越，距离中街步行街仅500米，交通便利，设施完善</p>
+                        <p><strong>房型：</strong>标准双人间，含早餐</p>
+                        <p><strong>价格：</strong>¥380/晚</p>
+                        <div style="background: #fff3cd; padding: 15px; margin-top: 15px; border-left: 4px solid #d4af37;">
+                            <strong>预订建议：</strong><br>
+                            • 建议提前在官网或携程预订<br>
+                            • 可享早鸟优惠，提前7天预订可优惠10%<br>
+                            • 酒店提供免费WiFi和停车位
+                        </div>
+                    `
+                },
+                palace: {
+                    title: '沈阳故宫博物院',
+                    content: `
+                        <p><strong>开放时间：</strong>8:30-17:00（16:00停止入场）</p>
+                        <p><strong>游览重点：</strong>大政殿、十王亭、凤凰楼、清宁宫</p>
+                        <p><strong>特色：</strong>中国现存最完整的两大古代宫殿建筑群之一，清朝入关前的皇宫，世界文化遗产</p>
+                        <p><strong>门票：</strong>¥60/人</p>
+                        <div style="background: #f8d7da; padding: 15px; margin-top: 15px; border-left: 4px solid #c8102e; color: #721c24;">
+                            <strong>⚠️ 预约信息：</strong><br>
+                            • <strong>必须提前预约！</strong>不售当日票<br>
+                            • 预约渠道：官网 www.sypm.org.cn 或微信公众号"沈阳故宫博物院"<br>
+                            • 建议提前3-7天预约，旺季需提前更久<br>
+                            • 实名制预约，需携带身份证原件<br>
+                            • 每日限流3000人
+                        </div>
+                    `
+                },
+                chicken: {
+                    title: '沈阳鸡架',
+                    content: `
+                        <p><strong>特色：</strong>沈阳最具代表性的特色美食，鸡架经过特殊调料腌制后烤制，外酥内嫩，香辣可口</p>
+                        <p><strong>推荐店铺：</strong>沈阳嚼爷鸡架（中街店）</p>
+                        <p><strong>地址：</strong>中街香港新地东南门南100米</p>
+                        <p><strong>特色做法：</strong>秘制调料腌制，炭火烤制，配啤酒食用最佳</p>
+                        <p><strong>价格：</strong>¥40/人</p>
+                        <p><strong>推荐理由：</strong>沈阳人的深夜食堂，外地游客必尝美食，体验地道东北夜生活文化</p>
+                    `
+                },
+                zhangfu: {
+                    title: '张学良旧居陈列馆',
+                    content: `
+                        <p><strong>开放时间：</strong>8:30-17:00</p>
+                        <p><strong>游览重点：</strong>大青楼、小青楼、赵四小姐楼、张学良将军雕像</p>
+                        <p><strong>特色：</strong>东北军阀张作霖及其长子张学良的官邸和私宅，见证了中国近代史的重要事件</p>
+                        <p><strong>门票：</strong>¥50/人</p>
+                        <p><strong>历史意义：</strong>西安事变的策划地，东北军的指挥中心</p>
+                        <div style="background: #fff3cd; padding: 15px; margin-top: 15px; border-left: 4px solid #d4af37;">
+                            <strong>预约信息：</strong><br>
+                            • 现场购票即可，无需提前预约<br>
+                            • 建议上午游览，人流较少<br>
+                            • 可与故宫联票购买，有优惠<br>
+                            • 提供免费讲解服务（整点开始）
+                        </div>
+                    `
+                },
+                beiling: {
+                    title: '沈阳北陵公园（昭陵）',
+                    content: `
+                        <p><strong>特色：</strong>清太宗皇太极陵墓，古松参天</p>
+                        <p><strong>游览重点：</strong>隆恩殿、宝城、神道、古松林</p>
+                        <p><strong>门票：</strong>¥50/人</p>
+                        <p><strong>最佳游览时间：</strong>下午，光线较好，适合拍照</p>
+                        <p><strong>历史价值：</strong>清朝皇家陵寝，建筑精美，文化底蕴深厚</p>
+                        <div style="background: #fff3cd; padding: 15px; margin-top: 15px; border-left: 4px solid #d4af37;">
+                            <strong>游览建议：</strong><br>
+                            • 现场购票，无需预约<br>
+                            • 建议游览时间2-3小时<br>
+                            • 园内有电瓶车，¥10/人<br>
+                            • 春秋季节风景最美
+                        </div>
+                    `
+                },
+                bath: {
+                    title: '东北洗浴文化体验',
+                    content: `
+                        <p><strong>推荐场所：</strong>永利汇洗浴休闲中心</p>
+                        <p><strong>地址：</strong>南一马路91号</p>
+                        <p><strong>体验内容：</strong>温泉浴、桑拿、按摩、休息厅</p>
+                        <p><strong>价格：</strong>¥100/人</p>
+                        <p><strong>特色：</strong>东北洗浴文化，放松身心，缓解旅途疲劳</p>
+                        <p><strong>文化体验：</strong>感受东北人的休闲生活方式</p>
+                        <div style="background: #e8f5e8; padding: 15px; margin-top: 15px; border-left: 4px solid #7cb342;">
+                            <strong>注意事项：</strong><br>
+                            • 携带身份证件<br>
+                            • 建议晚上8点后前往<br>
+                            • 体验时间约2-3小时<br>
+                            • 可选择搓澡服务（额外收费）
+                        </div>
+                    `
+                }
+            };
+            
+            if (modalData[type]) {
+                title.textContent = modalData[type].title;
+                content.innerHTML = modalData[type].content;
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // 点击模态框外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html> 
